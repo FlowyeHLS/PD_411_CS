@@ -1,112 +1,116 @@
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+#define DATA_TYPES
 
-//namespace dasdqwe
-//{
-//    class Program
-//    {
-//        static void Main(string[] args)//name, obiemzanimaem,diapozon chisel
-//        {
-//            Console.WriteLine("DataTypes");
-//            Console.WriteLine();
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;   
 
-//            // byte
-//            Console.WriteLine("byte");
-//            Console.WriteLine($"name of obertka: {typeof(byte).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(byte)}");
-//            Console.WriteLine($"DiapozZnacheni: {byte.MinValue} ... {byte.MaxValue}");
+namespace dasdqwe
+{
+    class Program
+    {
+        static void Main(string[] args)//name, obiemzanimaem,diapozon chisel
+        {
+#if DATA_TYPES
+            Console.WriteLine("DataTypes");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // byte
+            Console.WriteLine("byte");
+            Console.WriteLine($"name of obertka: {typeof(byte).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(byte)}");
+            Console.WriteLine($"DiapozZnacheni: {byte.MinValue} ... {byte.MaxValue}");
 
-//            // sbyte
-//            Console.WriteLine("sbyte");
-//            Console.WriteLine($"name of obertka: {typeof(sbyte).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(sbyte)}");
-//            Console.WriteLine($"DiapozZnacheni: {sbyte.MinValue} ... {sbyte.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // sbyte
+            Console.WriteLine("sbyte");
+            Console.WriteLine($"name of obertka: {typeof(sbyte).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(sbyte)}");
+            Console.WriteLine($"DiapozZnacheni: {sbyte.MinValue} ... {sbyte.MaxValue}");
 
-//            // short
-//            Console.WriteLine("short");
-//            Console.WriteLine($"name of obertka: {typeof(short).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(short)}");
-//            Console.WriteLine($"DiapozZnacheni: {short.MinValue} ... {short.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // short
+            Console.WriteLine("short");
+            Console.WriteLine($"name of obertka: {typeof(short).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(short)}");
+            Console.WriteLine($"DiapozZnacheni: {short.MinValue} ... {short.MaxValue}");
 
-//            // ushort
-//            Console.WriteLine("ushort");
-//            Console.WriteLine($"name of obertka: {typeof(ushort).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(ushort)}");
-//            Console.WriteLine($"DiapozZnacheni: {ushort.MinValue} ... {ushort.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // ushort
+            Console.WriteLine("ushort");
+            Console.WriteLine($"name of obertka: {typeof(ushort).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(ushort)}");
+            Console.WriteLine($"DiapozZnacheni: {ushort.MinValue} ... {ushort.MaxValue}");
 
-//            // int
-//            Console.WriteLine("int");
-//            Console.WriteLine($"name of obertka: {typeof(int).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(int)}");
-//            Console.WriteLine($"DiapozZnacheni: {int.MinValue} ... {int.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // int
+            Console.WriteLine("int");
+            Console.WriteLine($"name of obertka: {typeof(int).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(int)}");
+            Console.WriteLine($"DiapozZnacheni: {int.MinValue} ... {int.MaxValue}");
 
-//            // uint
-//            Console.WriteLine("uint");
-//            Console.WriteLine($"name of obertka: {typeof(uint).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(uint)}");
-//            Console.WriteLine($"DiapozZnacheni: {uint.MinValue} ... {uint.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // uint
+            Console.WriteLine("uint");
+            Console.WriteLine($"name of obertka: {typeof(uint).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(uint)}");
+            Console.WriteLine($"DiapozZnacheni: {uint.MinValue} ... {uint.MaxValue}");
 
-//            // long
-//            Console.WriteLine("long");
-//            Console.WriteLine($"name of obertka: {typeof(long).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(long)}");
-//            Console.WriteLine($"DiapozZnacheni: {long.MinValue} ... {long.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // long
+            Console.WriteLine("long");
+            Console.WriteLine($"name of obertka: {typeof(long).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(long)}");
+            Console.WriteLine($"DiapozZnacheni: {long.MinValue} ... {long.MaxValue}");
 
-//            // ulong
-//            Console.WriteLine("ulong");
-//            Console.WriteLine($"name of obertka: {typeof(ulong).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(ulong)}");
-//            Console.WriteLine($"DiapozZnacheni: {ulong.MinValue} ... {ulong.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // ulong
+            Console.WriteLine("ulong");
+            Console.WriteLine($"name of obertka: {typeof(ulong).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(ulong)}");
+            Console.WriteLine($"DiapozZnacheni: {ulong.MinValue} ... {ulong.MaxValue}");
 
-//            // float
-//            Console.WriteLine("float");
-//            Console.WriteLine($"name of obertka: {typeof(float).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(float)}");
-//            Console.WriteLine($"DiapozZnacheni: {float.MinValue} ... {float.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // float
+            Console.WriteLine("float");
+            Console.WriteLine($"name of obertka: {typeof(float).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(float)}");
+            Console.WriteLine($"DiapozZnacheni: {float.MinValue} ... {float.MaxValue}");
 
-//            // double
-//            Console.WriteLine("double");
-//            Console.WriteLine($"name of obertka: {typeof(double).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(double)}");
-//            Console.WriteLine($"DiapozZnacheni: {double.MinValue} ... {double.MaxValue}");
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // double
+            Console.WriteLine("double");
+            Console.WriteLine($"name of obertka: {typeof(double).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(double)}");
+            Console.WriteLine($"DiapozZnacheni: {double.MinValue} ... {double.MaxValue}");
 
-//            // char
-//            Console.WriteLine("char");
-//            Console.WriteLine($"name of obertka: {typeof(char).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(char)}");
-//            Console.WriteLine($"DiapozZnacheni: {(int)char.MinValue} ... {(int)char.MaxValue}"); 
+            Console.WriteLine();
 
-//            Console.WriteLine();
+            // char
+            Console.WriteLine("char");
+            Console.WriteLine($"name of obertka: {typeof(char).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(char)}");
+            Console.WriteLine($"DiapozZnacheni: {(int)char.MinValue} ... {(int)char.MaxValue}");
 
-//            // bool
-//            Console.WriteLine("bool");
-//            Console.WriteLine($"name of obertka: {typeof(bool).FullName}");
-//            Console.WriteLine($"razmerchik: {sizeof(bool)}");
-//            Console.WriteLine($"DiapozZnacheni: {bool.TrueString} ... {bool.FalseString}");
+            Console.WriteLine();
 
-//        }
-//    }
-//}
+            // bool
+            Console.WriteLine("bool");
+            Console.WriteLine($"name of obertka: {typeof(bool).FullName}");
+            Console.WriteLine($"razmerchik: {sizeof(bool)}");
+            Console.WriteLine($"DiapozZnacheni: {bool.TrueString} ... {bool.FalseString}");
+
+#endif
+        }
+    }
+}
