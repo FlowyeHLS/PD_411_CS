@@ -1,0 +1,187 @@
+------------------------------------------------------------------------------------------
+Game
+------------------------------------------------------------------------------------------
+int x = 0;
+int y = 0;
+
+char cursorChar = 'o';
+
+Console.Title = "Cursor Movement";
+
+Console.Clear();
+
+int windowWidth = Console.WindowWidth;
+int windowHeight = Console.WindowHeight;
+
+
+while (true)
+{
+	Console.SetCursorPosition(x, y);
+	Console.Write(cursorChar);
+
+	ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+	Console.SetCursorPosition(x, y);
+	Console.Write(' ');
+
+	switch (keyInfo.Key)
+	{
+		case ConsoleKey.W:
+		case ConsoleKey.UpArrow:
+			y = Math.Max(0, y - 1); 
+			break;
+		case ConsoleKey.S:
+		case ConsoleKey.DownArrow:
+			y = Math.Min(windowHeight - 1, y + 1); 
+			break;
+		case ConsoleKey.A:
+		case ConsoleKey.LeftArrow:
+			x = Math.Max(0, x - 1); 
+			break;
+		case ConsoleKey.D:
+		case ConsoleKey.RightArrow:
+			x = Math.Min(windowWidth - 1, x + 1);
+			break;
+		case ConsoleKey.Escape:  
+			return;
+	}
+
+	Console.SetCursorPosition(x, y);
+	Console.Write(cursorChar);
+}
+--------------------------------------------------------------------------------------------------
+Calc
+------------------------------------------------------------------------------------------
+	Console.Write("Введите первое число: ");
+	double num1;
+	while (!double.TryParse(Console.ReadLine(), out num1))
+	{
+		Console.WriteLine("Ошибка: Некорректный ввод. Пожалуйста, введите число.");
+		Console.Write("Введите первое число: ");
+	}
+
+	Console.Write("Введите оператор (+, -, *, /): ");
+	string operation = Console.ReadLine();
+
+	Console.Write("Введите второе число: ");
+	double num2;
+	while (!double.TryParse(Console.ReadLine(), out num2))
+	{
+		Console.WriteLine("Ошибка: Некорректный ввод. Пожалуйста, введите число.");
+		Console.Write("Введите второе число: ");
+	}
+
+	double result = 0;
+	try
+	{
+		switch (operation)
+		{
+			case "+":
+				result = num1 + num2;
+				break;
+			case "-":
+				result = num1 - num2;
+				break;
+			case "*":
+				result = num1 * num2;
+				break;
+			case "/":
+				if (num2 == 0)
+				{
+					Console.WriteLine("Ошибка: Деление на ноль!");
+					return;
+				}
+				result = num1 / num2;
+				break;
+			default:
+				Console.WriteLine("Ошибка: Неизвестный оператор.");
+				return;
+		}
+
+
+		Console.WriteLine($"Результат: {num1} {operation} {num2} = {result}");
+	}
+	catch (Exception ex)
+	{
+		Console.WriteLine($"Произошла ошибка: {ex.Message}");
+	}
+----------------------------------------------------------------------------------------------
+Geometry
+------------------------------------------------------------------------------------------
+	Console.Write("Введите размер фигуры: ");
+	int size;
+	while (!int.TryParse(Console.ReadLine(), out size) || size <= 0)
+	{
+		Console.WriteLine("Некорректный ввод. Введите положительное целое число.");
+		Console.Write("Введите размер фигуры: ");
+	}
+
+	Console.WriteLine("\n1. Прямоугольник");
+	DrawRectangle(size);
+
+	Console.WriteLine("\n2. Прямоугольный треугольник (прямой)");
+	DrawRightTriangle(size);
+
+	Console.WriteLine("\n3. Прямоугольный треугольник (перевернутый)");
+	DrawInvertedRightTriangle(size);
+
+	Console.WriteLine("\n4. Треугольник с отступами");
+	DrawIndentedTriangle(size);
+
+	Console.WriteLine("\n5. Треугольник из /");
+	DrawTriangleser(size);
+}
+
+static void DrawRectangle(int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++) Console.Write("* ");
+		Console.WriteLine();
+	}
+}
+
+static void DrawRightTriangle(int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j <= i; j++) Console.Write("* "); 
+		Console.WriteLine();
+	}
+}
+
+static void DrawInvertedRightTriangle(int size)
+{
+	for (int i = size; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++) Console.Write("* ");
+		Console.WriteLine();
+	}
+}
+
+static void DrawIndentedTriangle(int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int k = 0; k < i; k++) Console.Write("  ");
+		for (int j = 0; j < size - i; j++) Console.Write("* ");
+		Console.WriteLine();
+	}
+}
+
+static void DrawTriangleser(int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = i; j < size; j++) Console.Write(" "); Console.Write("/");
+		for (int j = 0; j < i * 2; j++) Console.Write(" "); Console.Write("\\");
+		Console.WriteLine();
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j <= i; j++) Console.Write(" "); Console.Write("\\");
+		for (int j = 0; j < (size - i - 1) * 2; j++) Console.Write(" "); Console.Write("/");
+		Console.WriteLine();
+	}
+}
